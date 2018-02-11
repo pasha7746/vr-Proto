@@ -1,0 +1,143 @@
+fileFormatVersion: 2
+guid: b979b013a2538d44a8bbbffbf9d169b5
+timeCreated: 1509517303
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Eye
+    100002: //RootNode
+    100004: left_COGS
+    100006: left_engine
+    100008: left_engine_Propeller
+    100010: left_mini_gun
+    100012: Left_shell
+    100014: right_COGS
+    100016: right_engine
+    100018: right_engine_Propeller
+    100020: right_mini_gun
+    100022: Right_shell
+    400000: Eye
+    400002: //RootNode
+    400004: left_COGS
+    400006: left_engine
+    400008: left_engine_Propeller
+    400010: left_mini_gun
+    400012: Left_shell
+    400014: right_COGS
+    400016: right_engine
+    400018: right_engine_Propeller
+    400020: right_mini_gun
+    400022: Right_shell
+    2300000: Eye
+    2300002: //RootNode
+    2300004: left_COGS
+    2300006: left_engine
+    2300008: left_engine_Propeller
+    2300010: left_mini_gun
+    2300012: Left_shell
+    2300014: right_COGS
+    2300016: right_engine
+    2300018: right_engine_Propeller
+    2300020: right_mini_gun
+    2300022: Right_shell
+    3300000: Eye
+    3300002: //RootNode
+    3300004: left_COGS
+    3300006: left_engine
+    3300008: left_engine_Propeller
+    3300010: left_mini_gun
+    3300012: Left_shell
+    3300014: right_COGS
+    3300016: right_engine
+    3300018: right_engine_Propeller
+    3300020: right_mini_gun
+    3300022: Right_shell
+    4300000: Centre_piece
+    4300002: Left_shell
+    4300004: Right_shell
+    4300006: Eye
+    4300008: left_COGS
+    4300010: right_mini_gun
+    4300012: left_mini_gun
+    4300014: right_engine
+    4300016: right_engine_Propeller
+    4300018: left_engine
+    4300020: left_engine_Propeller
+    4300022: right_COGS
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,354 @@
+fileFormatVersion: 2
+guid: eadcd368292e4e1499342c7953094d02
+timeCreated: 1509517304
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Centre_piece
+    100002: exhaust_bottom_left
+    100004: exhaust_bottom_right
+    100006: exhaust_top_left
+    100008: exhaust_top_right
+    100010: eye_casing
+    100012: Eye_surface
+    100014: gr_exhaust_pipes
+    100016: gr_left_COGS
+    100018: gr_left_engine
+    100020: gr_left_mini_gun
+    100022: gr_right_COGS
+    100024: gr_right_engine
+    100026: gr_right_mini_gun
+    100028: left_back_bot_cog
+    100030: left_back_bot_cog 1
+    100032: left_back_mid_cog
+    100034: left_back_mid_cog 1
+    100036: left_belt
+    100038: left_belt 1
+    100040: left_belt_big_cog
+    100042: left_belt_big_cog 1
+    100044: left_belt_small_cog
+    100046: left_belt_small_cog 1
+    100048: left_connection_to_main_body
+    100050: left_engine_body
+    100052: left_engine_pipe
+    100054: left_engine_Propeller
+    100056: left_front_cog
+    100058: left_front_cog 1
+    100060: left_mid_cog
+    100062: left_mid_cog 1
+    100064: left_mim_gun_barrel
+    100066: left_mim_gun_base
+    100068: Left_mini_gun_bottom_piston
+    100070: Left_mini_gun_cog
+    100072: Left_mini_gun_exhaust_1
+    100074: Left_mini_gun_exhaust_2
+    100076: Left_mini_gun_lower_arm
+    100078: Left_mini_gun_pivot
+    100080: Left_mini_gun_upper_arm
+    100082: Left_mini_gun_upper_piston
+    100084: Left_shell
+    100086: //RootNode
+    100088: right_connection_to_main_body
+    100090: right_engine_body
+    100092: right_engine_pipe
+    100094: right_engine_Propeller
+    100096: right_mim_gun_barrel
+    100098: right_mim_gun_base
+    100100: right_mini_gun_bottom_piston
+    100102: right_mini_gun_cog
+    100104: right_mini_gun_exhaust_1
+    100106: right_mini_gun_exhaust_2
+    100108: right_mini_gun_lower_arm
+    100110: right_mini_gun_pivot
+    100112: right_mini_gun_upper_arm
+    100114: right_mini_gun_upper_piston
+    100116: Right_shell
+    400000: Centre_piece
+    400002: exhaust_bottom_left
+    400004: exhaust_bottom_right
+    400006: exhaust_top_left
+    400008: exhaust_top_right
+    400010: eye_casing
+    400012: Eye_surface
+    400014: gr_exhaust_pipes
+    400016: gr_left_COGS
+    400018: gr_left_engine
+    400020: gr_left_mini_gun
+    400022: gr_right_COGS
+    400024: gr_right_engine
+    400026: gr_right_mini_gun
+    400028: left_back_bot_cog
+    400030: left_back_bot_cog 1
+    400032: left_back_mid_cog
+    400034: left_back_mid_cog 1
+    400036: left_belt
+    400038: left_belt 1
+    400040: left_belt_big_cog
+    400042: left_belt_big_cog 1
+    400044: left_belt_small_cog
+    400046: left_belt_small_cog 1
+    400048: left_connection_to_main_body
+    400050: left_engine_body
+    400052: left_engine_pipe
+    400054: left_engine_Propeller
+    400056: left_front_cog
+    400058: left_front_cog 1
+    400060: left_mid_cog
+    400062: left_mid_cog 1
+    400064: left_mim_gun_barrel
+    400066: left_mim_gun_base
+    400068: Left_mini_gun_bottom_piston
+    400070: Left_mini_gun_cog
+    400072: Left_mini_gun_exhaust_1
+    400074: Left_mini_gun_exhaust_2
+    400076: Left_mini_gun_lower_arm
+    400078: Left_mini_gun_pivot
+    400080: Left_mini_gun_upper_arm
+    400082: Left_mini_gun_upper_piston
+    400084: Left_shell
+    400086: //RootNode
+    400088: right_connection_to_main_body
+    400090: right_engine_body
+    400092: right_engine_pipe
+    400094: right_engine_Propeller
+    400096: right_mim_gun_barrel
+    400098: right_mim_gun_base
+    400100: right_mini_gun_bottom_piston
+    400102: right_mini_gun_cog
+    400104: right_mini_gun_exhaust_1
+    400106: right_mini_gun_exhaust_2
+    400108: right_mini_gun_lower_arm
+    400110: right_mini_gun_pivot
+    400112: right_mini_gun_upper_arm
+    400114: right_mini_gun_upper_piston
+    400116: Right_shell
+    2300000: Centre_piece
+    2300002: exhaust_bottom_left
+    2300004: exhaust_bottom_right
+    2300006: exhaust_top_left
+    2300008: exhaust_top_right
+    2300010: eye_casing
+    2300012: Eye_surface
+    2300014: left_back_bot_cog
+    2300016: left_back_bot_cog 1
+    2300018: left_back_mid_cog
+    2300020: left_back_mid_cog 1
+    2300022: left_belt
+    2300024: left_belt 1
+    2300026: left_belt_big_cog
+    2300028: left_belt_big_cog 1
+    2300030: left_belt_small_cog
+    2300032: left_belt_small_cog 1
+    2300034: left_connection_to_main_body
+    2300036: left_engine_body
+    2300038: left_engine_pipe
+    2300040: left_engine_Propeller
+    2300042: left_front_cog
+    2300044: left_front_cog 1
+    2300046: left_mid_cog
+    2300048: left_mid_cog 1
+    2300050: left_mim_gun_barrel
+    2300052: left_mim_gun_base
+    2300054: Left_mini_gun_bottom_piston
+    2300056: Left_mini_gun_cog
+    2300058: Left_mini_gun_exhaust_1
+    2300060: Left_mini_gun_exhaust_2
+    2300062: Left_mini_gun_lower_arm
+    2300064: Left_mini_gun_pivot
+    2300066: Left_mini_gun_upper_arm
+    2300068: Left_mini_gun_upper_piston
+    2300070: Left_shell
+    2300072: right_connection_to_main_body
+    2300074: right_engine_body
+    2300076: right_engine_pipe
+    2300078: right_engine_Propeller
+    2300080: right_mim_gun_barrel
+    2300082: right_mim_gun_base
+    2300084: right_mini_gun_bottom_piston
+    2300086: right_mini_gun_cog
+    2300088: right_mini_gun_exhaust_1
+    2300090: right_mini_gun_exhaust_2
+    2300092: right_mini_gun_lower_arm
+    2300094: right_mini_gun_pivot
+    2300096: right_mini_gun_upper_arm
+    2300098: right_mini_gun_upper_piston
+    2300100: Right_shell
+    3300000: Centre_piece
+    3300002: exhaust_bottom_left
+    3300004: exhaust_bottom_right
+    3300006: exhaust_top_left
+    3300008: exhaust_top_right
+    3300010: eye_casing
+    3300012: Eye_surface
+    3300014: left_back_bot_cog
+    3300016: left_back_bot_cog 1
+    3300018: left_back_mid_cog
+    3300020: left_back_mid_cog 1
+    3300022: left_belt
+    3300024: left_belt 1
+    3300026: left_belt_big_cog
+    3300028: left_belt_big_cog 1
+    3300030: left_belt_small_cog
+    3300032: left_belt_small_cog 1
+    3300034: left_connection_to_main_body
+    3300036: left_engine_body
+    3300038: left_engine_pipe
+    3300040: left_engine_Propeller
+    3300042: left_front_cog
+    3300044: left_front_cog 1
+    3300046: left_mid_cog
+    3300048: left_mid_cog 1
+    3300050: left_mim_gun_barrel
+    3300052: left_mim_gun_base
+    3300054: Left_mini_gun_bottom_piston
+    3300056: Left_mini_gun_cog
+    3300058: Left_mini_gun_exhaust_1
+    3300060: Left_mini_gun_exhaust_2
+    3300062: Left_mini_gun_lower_arm
+    3300064: Left_mini_gun_pivot
+    3300066: Left_mini_gun_upper_arm
+    3300068: Left_mini_gun_upper_piston
+    3300070: Left_shell
+    3300072: right_connection_to_main_body
+    3300074: right_engine_body
+    3300076: right_engine_pipe
+    3300078: right_engine_Propeller
+    3300080: right_mim_gun_barrel
+    3300082: right_mim_gun_base
+    3300084: right_mini_gun_bottom_piston
+    3300086: right_mini_gun_cog
+    3300088: right_mini_gun_exhaust_1
+    3300090: right_mini_gun_exhaust_2
+    3300092: right_mini_gun_lower_arm
+    3300094: right_mini_gun_pivot
+    3300096: right_mini_gun_upper_arm
+    3300098: right_mini_gun_upper_piston
+    3300100: Right_shell
+    4300000: Centre_piece
+    4300002: left_belt
+    4300004: left_front_cog
+    4300006: left_belt_small_cog
+    4300008: left_belt_big_cog
+    4300010: left_mid_cog
+    4300012: left_back_mid_cog
+    4300014: left_back_bot_cog
+    4300016: eye_casing
+    4300018: Eye_surface
+    4300020: Left_shell
+    4300022: Right_shell
+    4300024: exhaust_top_right
+    4300026: exhaust_bottom_right
+    4300028: exhaust_bottom_left
+    4300030: exhaust_top_left
+    4300032: left_engine_body
+    4300034: left_connection_to_main_body
+    4300036: left_engine_Propeller
+    4300038: left_engine_pipe
+    4300040: Left_mini_gun_upper_arm
+    4300042: Left_mini_gun_cog
+    4300044: Left_mini_gun_lower_arm
+    4300046: Left_mini_gun_upper_piston
+    4300048: Left_mini_gun_bottom_piston
+    4300050: Left_mini_gun_pivot
+    4300052: left_mim_gun_base
+    4300054: left_mim_gun_barrel
+    4300056: Left_mini_gun_exhaust_1
+    4300058: Left_mini_gun_exhaust_2
+    4300060: right_engine_body
+    4300062: right_connection_to_main_body
+    4300064: right_engine_Propeller
+    4300066: right_engine_pipe
+    4300068: right_mini_gun_upper_arm
+    4300070: right_mini_gun_cog
+    4300072: right_mini_gun_lower_arm
+    4300074: right_mini_gun_upper_piston
+    4300076: right_mini_gun_bottom_piston
+    4300078: right_mini_gun_pivot
+    4300080: right_mim_gun_base
+    4300082: right_mim_gun_barrel
+    4300084: right_mini_gun_exhaust_1
+    4300086: right_mini_gun_exhaust_2
+    4300088: left_belt
+    4300090: left_front_cog
+    4300092: left_belt_small_cog
+    4300094: left_belt_big_cog
+    4300096: left_mid_cog
+    4300098: left_back_mid_cog
+    4300100: left_back_bot_cog
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
