@@ -57,7 +57,6 @@ public class FlatScreenBoundary : MonoBehaviour
         if (side.controller_Obj.activeInHierarchy)
         {
             Vector3 point = side.boundingCamera.WorldToViewportPoint(side.controller_Obj.transform.position);
-
             if (!(point.z > zMin && point.z < zMax && point.x > xMin && point.x < xMax && point.y > yMin && point.y < yMax))
             {
                 if (OnContOutOfBound_Inner != null) OnContOutOfBound_Inner(side.isLeft);

@@ -29,7 +29,6 @@ public class Shooting : MonoBehaviour
     // Use this for initialization
 	void Start ()
 	{
-        print(isLeft);
 	    controllerIndex = myTracker.index.GetHashCode();
     }
 	

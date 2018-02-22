@@ -596,9 +596,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 4d8f6440-c2ae-4d1a-a93e-778a35cee8b3
-  projectName: VR Project Prototype
-  organizationId: pasha7746
+  cloudProjectId: 
+  projectName: 
+  organizationId: 
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

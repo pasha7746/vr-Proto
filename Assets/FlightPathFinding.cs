@@ -3,6 +3,8 @@ using System.Collections;
 using System.ComponentModel;
 using DG.Tweening;
 using UnityEngine;
+using Random = UnityEngine.Random;
+
 
 public class FlightPathFinding : MonoBehaviour
 {
@@ -14,31 +16,32 @@ public class FlightPathFinding : MonoBehaviour
     private Vector3 targetPos;
     private event Action OnPointHit;
     private event Action OnRouteComplete;
-
+    private event Action OnReadyForCombat;
+    private event Action OnReadyToMove;
 
     private NodePath currentNodePath;
     private NodePathCluster_Start myPathCluster;
     private Coroutine followingRoutine;
     private int indexCounter;
-
+    
     public GameObject beacon;
-
-
+    public float moveSpeed;
 
 	// Use this for initialization
 	void Start ()
 	{
 	    myCombatAreaGrid = FindObjectOfType<FlightGrid>();
-	   
+	    OnRouteComplete += LaunchRoamMode;
+	    initialPos = transform.position;
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-           //AllignToGrid();
-        }
+        //if (Input.GetKeyDown(KeyCode.A))
+        //{
+        //   MoveToPointOnMap();
+        //}
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //MoveToPoint(beacon.transform.position, 5);
@@ -50,10 +53,30 @@ public class FlightPathFinding : MonoBehaviour
         }
     }
 
-    public void AllignToGrid()
+    public void LaunchRoamMode()
     {
-       // print("WorkerRunnign");
-        initialPos = transform.position;
+        AlignToGrid();
+        OnReadyToMove += RequestMove;
+        OnReadyForCombat += RequestCombat;
+        RequestMove();
+    }
+
+    public void RequestCombat()
+    {
+
+    }
+
+    public void RequestMove()
+    {
+
+    }
+
+    public void AlignToGrid()
+    {
+        print("WorkerRunning");
+
+      //  initialPos = transform.position;
+
         BackgroundWorker worker = new BackgroundWorker();
         worker.DoWork += DetectPoint;
         worker.RunWorkerCompleted += OnCompletDetectPoint;
@@ -83,8 +106,7 @@ public class FlightPathFinding : MonoBehaviour
     }
     private void OnCompletDetectPoint(object sender, RunWorkerCompletedEventArgs e)
     {
-      // print("WorkerDone, Result Target: "+targetPos );
-       MoveToPoint(targetPos, 1);
+       MoveToPoint(targetPos, moveSpeed);
     }
 
     public void MoveToPoint(Vector3 point, float speed)
@@ -97,7 +119,7 @@ public class FlightPathFinding : MonoBehaviour
     public void LookAtPoint(Vector3 point, float speed)
     {
         float newSpeed = 0;
-        //newSpeed = Vector3.Angle(transform.position, point);
+        newSpeed = Vector3.Angle(transform.position, point);
         transform.DOLookAt(point, speed);
     }
 
@@ -106,8 +128,13 @@ public class FlightPathFinding : MonoBehaviour
         if (OnPointHit != null) OnPointHit();
     }
 
-    public void SeekPath()
+
+    public void MoveToPointOnMap()
     {
+        Vector3 target= new Vector3(Random.Range(-myCombatAreaGrid.bounds.x/2, myCombatAreaGrid.bounds.x / 2), Random.Range(-myCombatAreaGrid.bounds.y / 2, myCombatAreaGrid.bounds.y / 2), Random.Range(-myCombatAreaGrid.bounds.z / 2, myCombatAreaGrid.bounds.z / 2));
+        initialPos = transform.position + target;
+        LookAtPoint(target, 0.5f );
+        AlignToGrid();
 
     }
 
@@ -138,14 +165,16 @@ public class FlightPathFinding : MonoBehaviour
             {
                 if (indexCounter < target)
                 {
-                    MoveToPoint(path.listOfNodes[indexCounter].transform.position, 10);  //add speed values
+                    MoveToPoint(path.listOfNodes[indexCounter].transform.position, moveSpeed);  //add speed values
                     LookAtPoint(path.listOfNodes[indexCounter].transform.position,0.3f);  //add speed values
                     compare = indexCounter;
                 }
                 else
                 {
-                    if (OnRouteComplete != null) OnRouteComplete();
+                    initialPos = transform.position;
+                    
                     myCombatAreaGrid = myPathCluster.connectedFlightGrid;
+                    if (OnRouteComplete != null) OnRouteComplete();
                     print("PathComplete");
                     break;
                 }
@@ -162,6 +191,8 @@ public class FlightPathFinding : MonoBehaviour
     {
         indexCounter++;
     }
+
     
 
+    
 }

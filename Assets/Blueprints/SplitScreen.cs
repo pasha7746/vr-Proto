@@ -13,12 +13,12 @@ public class SplitScreen : MonoBehaviour
     /// </summary>
     public event Action OnSplitEnable;
     public event Action OnSplitDisable;
-   
+    private FlatScreenBoundary myScreenBoundary;
 
 	// Use this for initialization
 	void Start ()
 	{
-
+	    myScreenBoundary = GetComponentInParent<FlatScreenBoundary>();
 	}
 	
 	// Update is called once per frame
@@ -28,12 +28,17 @@ public class SplitScreen : MonoBehaviour
 	    {
 	        VRSettings.showDeviceView = false;
 	        if (OnSplitEnable != null) OnSplitEnable();
-	    }
-	    if (Input.GetKeyDown(KeyCode.S))
+	        myScreenBoundary.leftSide.shouldVibrate = true;
+	        myScreenBoundary.rightSide.shouldVibrate = true;
+
+        }
+        if (Input.GetKeyDown(KeyCode.S))
 	    {
 	        VRSettings.showDeviceView = true;
 	        if (OnSplitDisable != null) OnSplitDisable();
-	    }
+	        myScreenBoundary.leftSide.shouldVibrate = false;
+	        myScreenBoundary.rightSide.shouldVibrate = false;
+        }
 
 	    
     }
