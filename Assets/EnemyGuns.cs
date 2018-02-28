@@ -13,14 +13,14 @@ public class EnemyGuns : MonoBehaviour
         public GameObject projectileModel;
         public float fireRate;
         public float projectileSpeed;
-        public float gunDamage;
+        public Vector2 shotsInBurst;
         public Transform barrelEnding;
     }
 
-    private Players targetPlayers;
+    public Players targetPlayers;
     private event Action<GunStats> OnAllGunsAimed;
     public List<GunStats> gunList;
-
+    public Coroutine fireRoutine;
 
 	// Use this for initialization
 	void Start ()
@@ -46,6 +46,14 @@ public class EnemyGuns : MonoBehaviour
 	    }
     }
 
+    public void BreakFire()
+    {
+        if (fireRoutine != null)
+        {
+            StopCoroutine(fireRoutine);
+        }
+    }
+
     public void AimGuns(Vector3 target)
     {
         for (int i = 0; i < gunList.Count; i++)
@@ -63,16 +71,27 @@ public class EnemyGuns : MonoBehaviour
         return null;
     }
 
+    public IEnumerator FireRoutine()
+    {
+
+        //loop here with waits and check conditions...fire a shot per loop.
+
+        yield return null;
+    }
+
     public void FireGuns(GunStats cGun)
     {
        
-            if (RunChecks())
-            {
-                ShootProjectile(cGun);
-            }
+            //if (Cooldown())
+            //{
+            //    ShootProjectile(cGun);
+            //}
         
 
+        //call fire routine here...
+
     }
+
 
     public void ShootProjectile(GunStats cGun)   //projectile gets fired out using this method
     {
@@ -83,11 +102,11 @@ public class EnemyGuns : MonoBehaviour
         spawnedProjectile.GetComponent<Rigidbody>().AddForce(spawnedProjectile.transform.forward* cGun.projectileSpeed);
     }
 
-    public bool RunChecks() //all checks for fire rate and the like...
-    {
+    //public bool Cooldown() //all checks for fire rate and the like...
+    //{
 
-        return true;
-    }
+    //    return true;
+    //}
 
 
 }

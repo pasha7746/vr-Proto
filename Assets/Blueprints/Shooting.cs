@@ -93,7 +93,7 @@ public class Shooting : MonoBehaviour
         LayerMask mask = 1 << 9;
         mask = ~mask;
         Physics.Raycast(transform.position, transform.forward, out hit, raycastScanDistance,mask);
-        Debug.DrawLine(transform.position,hit.point,Color.red,200f);
+       // Debug.DrawLine(transform.position,hit.point,Color.red,200f);
 
         GameObject tempProjectile = Instantiate(projectile, transform.position + transform.TransformDirection(spawnOfset), transform.rotation);
         Projectile tempComponent = tempProjectile.GetComponent<Projectile>();
