@@ -17,6 +17,8 @@ public class FlightPathFinding : MonoBehaviour
     private event Action OnPointHit;
     public event Action OnGridPointHit;
     public event Action OnRouteComplete;
+
+    private bool isPathComplete;
     //private event Action OnReadyForCombat;
     //private event Action OnReadyToMove;
 
@@ -139,7 +141,12 @@ public class FlightPathFinding : MonoBehaviour
 
     public void EventPointHit()
     {
-        if (OnGridPointHit != null) OnGridPointHit();
+        if (isPathComplete)
+        {
+            if (OnGridPointHit != null) OnGridPointHit();
+            return;
+        }
+
         if (OnPointHit != null) OnPointHit();
     }
 
@@ -190,6 +197,7 @@ public class FlightPathFinding : MonoBehaviour
                     
                     myCombatAreaGrid = myPathCluster.connectedFlightGrid;
                     if (OnRouteComplete != null) OnRouteComplete();
+                    isPathComplete = true;
                     print("PathComplete");
                     break;
                 }

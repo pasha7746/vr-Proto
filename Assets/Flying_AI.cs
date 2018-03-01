@@ -33,7 +33,6 @@ public class Flying_AI : MonoBehaviour
 
     public void Wait()
     {
-      
         if (waitCoroutine == null)
         {
             waitCoroutine = StartCoroutine(WaitCoroutine());

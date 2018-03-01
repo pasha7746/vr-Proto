@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemyGuns : MonoBehaviour
 {
@@ -11,16 +12,18 @@ public class EnemyGuns : MonoBehaviour
     {
         public GameObject gunModel;
         public GameObject projectileModel;
-        public float fireRate;
+        public Vector2 fireRateRange;
         public float projectileSpeed;
         public Vector2 shotsInBurst;
         public Transform barrelEnding;
+        [Range(0,1)]
+        public float accuracy;
     }
 
     public Players targetPlayers;
-    private event Action<GunStats> OnAllGunsAimed;
+    private event Action<GunStats, int> OnAllGunsAimed;
     public List<GunStats> gunList;
-    public Coroutine fireRoutine;
+    public List<Coroutine> fireRoutineList= new List<Coroutine>();
 
 	// Use this for initialization
 	void Start ()
@@ -35,6 +38,7 @@ public class EnemyGuns : MonoBehaviour
 	        tempGunStats.barrelEnding = gunList[i].gunModel.GetComponentInChildren<ProjectileSpawnPoint>().transform;
 	        gunList[i] = tempGunStats;
 	    }
+	    
 	}
 	
 	// Update is called once per frame
@@ -46,11 +50,11 @@ public class EnemyGuns : MonoBehaviour
 	    }
     }
 
-    public void BreakFire()
+    public void BreakFire(Coroutine routine)
     {
-        if (fireRoutine != null)
+        if (routine != null)
         {
-            StopCoroutine(fireRoutine);
+            StopCoroutine(routine);
         }
     }
 
@@ -58,37 +62,46 @@ public class EnemyGuns : MonoBehaviour
     {
         for (int i = 0; i < gunList.Count; i++)
         {
-            gunList[i].gunModel.transform.DOLookAt(target, 1f).OnComplete(AimComplete(gunList[i]));
+            
+            gunList[i].gunModel.transform.DOLookAt(target, 1f).OnComplete(AimComplete(gunList[i], i));
 
         }
 
         
     }
 
-    public TweenCallback AimComplete(GunStats cGun)
+    public TweenCallback AimComplete(GunStats cGun, int index)
     {
-        if (OnAllGunsAimed != null) OnAllGunsAimed(cGun);
+        if (OnAllGunsAimed != null) OnAllGunsAimed(cGun, index);
         return null;
     }
 
-    public IEnumerator FireRoutine()
+    public IEnumerator FireRoutine(GunStats cGun)
     {
 
-        //loop here with waits and check conditions...fire a shot per loop.
+        int ammountOfShots = (int)(Random.Range(cGun.shotsInBurst.x, cGun.shotsInBurst.y+1));
+
+        for (int i = 0; i < ammountOfShots; i++)
+        {
+            yield return new WaitForSeconds(Random.Range(cGun.fireRateRange.x, cGun.fireRateRange.y));
+            ShootProjectile(cGun);
+        }
 
         yield return null;
     }
 
-    public void FireGuns(GunStats cGun)
+    public void FireGuns(GunStats cGun, int coroutineIndex)
     {
-       
-            //if (Cooldown())
-            //{
-            //    ShootProjectile(cGun);
-            //}
-        
+        if (fireRoutineList.Count < gunList.Count)
+        {
+            fireRoutineList.Add(StartCoroutine(FireRoutine(cGun)));
+        }
+        else
+        {
+            fireRoutineList[coroutineIndex] = StartCoroutine(FireRoutine(cGun));
 
-        //call fire routine here...
+        }
+
 
     }
 
@@ -99,7 +112,13 @@ public class EnemyGuns : MonoBehaviour
 
         spawnedProjectile.transform.position = cGun.barrelEnding.position;
         spawnedProjectile.transform.LookAt(targetPlayers.transform.position);
-        spawnedProjectile.GetComponent<Rigidbody>().AddForce(spawnedProjectile.transform.forward* cGun.projectileSpeed);
+
+        float distance = Vector3.Distance(cGun.barrelEnding.position, targetPlayers.transform.position);
+        distance *= cGun.accuracy;
+      //  Vector3 pos = cGun.barrelEnding.position+ 
+        Vector3 accuracyOffest = (spawnedProjectile.transform.forward* distance) + new Vector3(Random.Range(0f,1f), Random.Range(0f, 1f), Random.Range(0f, 1f)) ;
+        accuracyOffest= Vector3.Normalize(accuracyOffest);
+        spawnedProjectile.GetComponent<Rigidbody>().AddForce((spawnedProjectile.transform.forward+ accuracyOffest) * cGun.projectileSpeed);
     }
 
     //public bool Cooldown() //all checks for fire rate and the like...
