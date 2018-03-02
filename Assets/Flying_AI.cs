@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(FlightPathFinding))]
+
 public class Flying_AI : MonoBehaviour
 {
     private EnemyGuns myGuns;
     private FlightPathFinding myMovement;
     public Vector2 droidHoverLenghtRange;
     private Coroutine waitCoroutine;
+
+    public bool moveLocked; //debug only
 
     void Awake()
     {
@@ -21,6 +25,7 @@ public class Flying_AI : MonoBehaviour
 	{
 	    myMovement.OnRouteComplete += myMovement.MoveToRandomPointOnMap;
 	    myMovement.OnGridPointHit += Wait;
+        if(moveLocked) return;
 		myMovement.MoveToCombatArea();
 
 	}
@@ -33,6 +38,8 @@ public class Flying_AI : MonoBehaviour
 
     public void Wait()
     {
+       
+
         if (waitCoroutine == null)
         {
             waitCoroutine = StartCoroutine(WaitCoroutine());

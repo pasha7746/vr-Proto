@@ -26,7 +26,7 @@ public class SplitScreen : MonoBehaviour
 	{
 	    if (Input.GetKeyDown(KeyCode.A))
 	    {
-	        VRSettings.showDeviceView = false;
+	        UnityEngine.XR.XRSettings.showDeviceView = false;
 	        if (OnSplitEnable != null) OnSplitEnable();
 	        myScreenBoundary.leftSide.shouldVibrate = true;
 	        myScreenBoundary.rightSide.shouldVibrate = true;
@@ -34,7 +34,7 @@ public class SplitScreen : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.S))
 	    {
-	        VRSettings.showDeviceView = true;
+	        UnityEngine.XR.XRSettings.showDeviceView = true;
 	        if (OnSplitDisable != null) OnSplitDisable();
 	        myScreenBoundary.leftSide.shouldVibrate = false;
 	        myScreenBoundary.rightSide.shouldVibrate = false;

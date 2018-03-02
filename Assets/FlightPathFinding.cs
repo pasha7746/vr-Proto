@@ -27,7 +27,6 @@ public class FlightPathFinding : MonoBehaviour
     private Coroutine followingRoutine;
     private int indexCounter;
     
-    public GameObject beacon;
     public float moveSpeed;
 
 	// Use this for initialization

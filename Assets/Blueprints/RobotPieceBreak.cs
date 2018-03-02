@@ -21,6 +21,8 @@ public class RobotPieceBreak : BaseRobotPiece
         if (shouldRenderChildren)
         {
             childRendrerList=(piece.GetComponentsInChildren<MeshRenderer>().ToList());
+            childColliderList = (piece.GetComponentsInChildren<BoxCollider>().ToList());
+
         }
         if (isPieceBreakable)
         {
@@ -55,6 +57,7 @@ public class RobotPieceBreak : BaseRobotPiece
         if (shouldRenderChildren)
         {
             childRendrerList.ForEach((A) => { A.enabled = true; });
+            childColliderList.ForEach((A) => { A.enabled = true; });
         }
         if (OnPieceBreak != null) OnPieceBreak(this);
     }

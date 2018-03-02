@@ -10,6 +10,7 @@ public class BaseRobotPiece : MonoBehaviour
     protected Collider myCollider;
     protected Rigidbody myRigidbody;
     protected List<MeshRenderer> childRendrerList;
+    protected List<BoxCollider> childColliderList;
     public bool shouldRenderChildren;
     public event Action<float> OnPieceHit;
     [Range(0,100)]
