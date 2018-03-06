@@ -1504,7 +1504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnOfset: {x: 0, y: 0.05, z: 0.4}
   projectile: {fileID: 1422529440040548, guid: 38a7121bcaadd0d40be695c89bb95990, type: 2}
-  projectileLaunchSpeed: 2000
+  projectileLaunchSpeed: 4000
   isLeft: 0
   vibration: 1
   raycastScanDistance: 100
@@ -1655,7 +1655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnOfset: {x: 0, y: 0.05, z: 0.4}
   projectile: {fileID: 1422529440040548, guid: 38a7121bcaadd0d40be695c89bb95990, type: 2}
-  projectileLaunchSpeed: 2000
+  projectileLaunchSpeed: 4000
   isLeft: 1
   vibration: 1
   raycastScanDistance: 100

@@ -28,7 +28,7 @@ public class TestRobotSpawner : MonoBehaviour
             yield return new WaitForSeconds(spawnSpeed);
             robotsToSpawn--;
            robotCache= Instantiate(robot);
-            print(transform.position);
+           // print(transform.position);
             robotCache.transform.position = transform.position;
             if (robotsToSpawn <= 0)
             {

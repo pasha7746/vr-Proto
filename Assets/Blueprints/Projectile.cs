@@ -16,7 +16,7 @@ public class Projectile : MonoBehaviour
     public Vector3 targetPoint;
     [HideInInspector] public bool shouldBounce;
     [HideInInspector] public float angle;
-    public float projectileLidetime;
+    public float projectileLifetime;
     [HideInInspector] public Vector3 norm;
     public float reboundVelocityLossScalar;
     public float penetrationProtrusinAmmount;
@@ -47,13 +47,19 @@ public class Projectile : MonoBehaviour
     {
         movingMask = 1 << 8;
         
-        StartLifeCountDown(projectileLidetime);
-        norm = hit.normal;
-        impactedObject = hit.collider.gameObject;
-        targetPoint = hit.point;
-       
-        CheckIfShouldBounce();
-        
+        StartLifeCountDown(projectileLifetime);
+        if (hit.collider != null && !hit.collider.isTrigger)
+        {
+            norm = hit.normal;
+            impactedObject = hit.collider.gameObject;
+            targetPoint = hit.point;
+            CheckIfShouldBounce();
+
+        }
+
+
+
+
     }
 
     // Update is called once per frame
@@ -96,15 +102,19 @@ public class Projectile : MonoBehaviour
         Vector3 newVelocity = Vector3.Reflect(myRigidbody.velocity, norm);
         
         Physics.Raycast(targetPoint, newVelocity, out hit, 30f);
-        Debug.DrawLine(targetPoint,hit.point,Color.blue,200f);
+        //Debug.DrawLine(targetPoint,hit.point,Color.blue,200f);
         if (hit.collider != null)
         {
-            
-            targetPoint = hit.point;
-            impactedObject = hit.collider.gameObject;
-            norm = hit.normal;
-            transform.LookAt(hit.point);
-            CheckIfShouldBounce();
+            if (!hit.collider.isTrigger)
+            {
+                targetPoint = hit.point;
+                impactedObject = hit.collider.gameObject;
+                norm = hit.normal;
+                transform.LookAt(hit.point);
+                CheckIfShouldBounce();
+            }
+
+           
         }
 
         

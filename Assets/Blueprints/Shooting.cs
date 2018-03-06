@@ -9,7 +9,6 @@ public class Shooting : MonoBehaviour
     public Vector3 spawnOfset;
     public GameObject projectile;
     public float projectileLaunchSpeed;
-   // public float projectileLifetime;
     private SteamVR_TrackedObject myTracker;
     private Coroutine vibrateRoutine;
     private int controllerIndex;
@@ -17,8 +16,17 @@ public class Shooting : MonoBehaviour
     public bool vibration;
     private AudioSource mySource;
     public float raycastScanDistance;
-  //  [Range(0f,90f)]
-   // public float minReboundAngle;
+    public Mode fireMode;
+    public float shotgunShrapnelParts;
+    public float burstFireShots;
+    public float burstFireRate;
+    public Coroutine burstFireCoroutine;
+    
+    public enum Mode
+    {
+        Single, Shotgun, BurstFire
+    }
+  
     void Awake()
     {
         myTracker = GetComponentInParent<SteamVR_TrackedObject>();
@@ -36,40 +44,68 @@ public class Shooting : MonoBehaviour
 	void Update ()
     {
 	   
-           
-
-
-
         if (Input.GetButtonDown("TriggerButRight")  && !isLeft)
         {
-            if (vibration)
-            {
-                if (vibrateRoutine != null)
-                {
-                    StopCoroutine(vibrateRoutine);
-
-                }
-                vibrateRoutine = StartCoroutine(VibrateController(2000, 0.1f));
-            }
-           
-            ShootProjectile();
+            OnTriggerHit();
         }
         if (Input.GetButtonDown("TriggerButLeft")&& isLeft)
         {
-            if (vibration)
-            {
-                if (vibrateRoutine != null)
-                {
-                    StopCoroutine(vibrateRoutine);
-
-                }
-                vibrateRoutine = StartCoroutine(VibrateController(2000, 0.1f));
-            }
-
-            
-            ShootProjectile();
+           OnTriggerHit();
         }
 
+    }
+
+    public void OnTriggerHit()
+    {
+        switch (fireMode)
+        {
+            case Mode.Single:
+                VibrateAndShoot();
+                break;
+            case Mode.Shotgun:
+                ShotgunShot();
+                break;
+            case Mode.BurstFire:
+                burstFireCoroutine = StartCoroutine(BurstFireShot());
+
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+       
+        
+    }
+
+    public IEnumerator BurstFireShot()
+    {
+        for (int i = 0; i < burstFireShots; i++)
+        {
+            yield return new WaitForSeconds(60/burstFireRate);
+            VibrateAndShoot();
+        }
+        yield return null;
+    }
+    
+    public void ShotgunShot()
+    {
+        for (int i = 0; i < shotgunShrapnelParts; i++)
+        {
+            VibrateAndShoot();
+        }
+    }
+
+    public void VibrateAndShoot()
+    {
+        if (vibration)
+        {
+            if (vibrateRoutine != null)
+            {
+                StopCoroutine(vibrateRoutine);
+
+            }
+            vibrateRoutine = StartCoroutine(VibrateController(2000, 0.1f));
+        }
+        ShootProjectile();
     }
 
     public IEnumerator VibrateController(ushort stenght, float duration)
@@ -97,18 +133,10 @@ public class Shooting : MonoBehaviour
 
         GameObject tempProjectile = Instantiate(projectile, transform.position + transform.TransformDirection(spawnOfset), transform.rotation);
         Projectile tempComponent = tempProjectile.GetComponent<Projectile>();
-
-
-       // tempComponent.StartLifeCountDown(projectileLifetime);
-        if (hit.collider != null)
-        {
-            tempComponent.hit = hit;
-            tempComponent.CallStart();
-        }
-
-
-       
         
+        tempComponent.hit = hit;
+        tempComponent.CallStart();
+
         tempProjectile.GetComponent<Rigidbody>().AddForce((transform.forward) * projectileLaunchSpeed);
 
         //mySource.Play();

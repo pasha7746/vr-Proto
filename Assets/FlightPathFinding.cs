@@ -88,7 +88,7 @@ public class FlightPathFinding : MonoBehaviour
 
     public void AlignToGrid()
     {
-        print("WorkerRunning");
+       // print("WorkerRunning");
 
       //  initialPos = transform.position;
 
@@ -197,7 +197,7 @@ public class FlightPathFinding : MonoBehaviour
                     myCombatAreaGrid = myPathCluster.connectedFlightGrid;
                     if (OnRouteComplete != null) OnRouteComplete();
                     isPathComplete = true;
-                    print("PathComplete");
+                   // print("PathComplete");
                     break;
                 }
             }

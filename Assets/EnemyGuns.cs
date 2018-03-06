@@ -20,7 +20,7 @@ public class EnemyGuns : MonoBehaviour
         public float accuracy;
     }
 
-    public Players targetPlayers;
+    public SteamVR_Camera targetPlayers;
     private event Action<GunStats, int> OnAllGunsAimed;
     public List<GunStats> gunList;
     public List<Coroutine> fireRoutineList= new List<Coroutine>();
@@ -28,8 +28,10 @@ public class EnemyGuns : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-	    targetPlayers = FindObjectOfType<Players>();
+	    targetPlayers = FindObjectOfType<SteamVR_Camera>();
 	    OnAllGunsAimed += FireGuns;
+	    GetComponent<RobotCenterHealth>().OnDeath += OnDeathCutOfFireRoutines;
+
         GunStats tempGunStats= new GunStats();
 
 	    for (int i = 0; i < gunList.Count; i++)
@@ -44,20 +46,20 @@ public class EnemyGuns : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	    if (Input.GetKeyDown(KeyCode.A))
-	    {
-            AimGuns(targetPlayers.transform.position);
-	    }
+	    //if (Input.GetKeyDown(KeyCode.A))
+	    //{
+     //       AimGuns(targetPlayers.transform.position);
+	    //}
     }
 
-    public void BreakFire(Coroutine routine)
+    public void OnDeathCutOfFireRoutines()
     {
-        if (routine != null)
-        {
-            StopCoroutine(routine);
-        }
-    }
+       OnAllGunsAimed = null;
+       StopAllCoroutines();
+      
 
+    }
+    
     public void AimGuns(Vector3 target)
     {
         for (int i = 0; i < gunList.Count; i++)
@@ -83,6 +85,8 @@ public class EnemyGuns : MonoBehaviour
 
         for (int i = 0; i < ammountOfShots; i++)
         {
+           // Debug.Break();
+
             yield return new WaitForSeconds(Random.Range(cGun.fireRateRange.x, cGun.fireRateRange.y));
             ShootProjectile(cGun);
         }
@@ -98,8 +102,8 @@ public class EnemyGuns : MonoBehaviour
         }
         else
         {
-            fireRoutineList[coroutineIndex] = StartCoroutine(FireRoutine(cGun));
-
+           
+                fireRoutineList[coroutineIndex] = StartCoroutine(FireRoutine(cGun));
         }
 
 
@@ -121,11 +125,7 @@ public class EnemyGuns : MonoBehaviour
         spawnedProjectile.GetComponent<Rigidbody>().AddForce((spawnedProjectile.transform.forward+ accuracyOffest) * cGun.projectileSpeed);
     }
 
-    //public bool Cooldown() //all checks for fire rate and the like...
-    //{
-
-    //    return true;
-    //}
+   
 
 
 }

@@ -416,20 +416,6 @@ Prefab:
       propertyPath: marker
       value: 
       objectReference: {fileID: 672374177}
-    - target: {fileID: 65837996825393788, guid: 3f1b8e33655cc7b4999f0ca7fd02a28b,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 13.43
-      objectReference: {fileID: 0}
-    - target: {fileID: 65837996825393788, guid: 3f1b8e33655cc7b4999f0ca7fd02a28b,
-        type: 2}
-      propertyPath: m_Size.z
-      value: 13.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4578817148741302, guid: 3f1b8e33655cc7b4999f0ca7fd02a28b, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3f1b8e33655cc7b4999f0ca7fd02a28b, type: 2}
   m_IsPrefabParent: 0

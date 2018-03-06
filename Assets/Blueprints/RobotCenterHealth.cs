@@ -19,8 +19,11 @@ public class RobotCenterHealth : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-		
-	}
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            EventPieceIsHit(100);
+        }
+    }
 
     public void EventPieceIsHit(float damage)
     {
