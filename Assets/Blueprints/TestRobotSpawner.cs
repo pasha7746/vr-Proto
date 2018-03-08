@@ -9,17 +9,13 @@ public class TestRobotSpawner : MonoBehaviour
     public GameObject robot;
 
     private GameObject robotCache;
-	// Use this for initialization
-	void Start ()
-	{
-	    StartCoroutine(Spawn());
-	}
 	
-	// Update is called once per frame
-	void Update ()
+
+    public void StartSpawning()
     {
-		
-	}
+        StartCoroutine(Spawn());
+
+    }
 
     public IEnumerator Spawn()
     {
