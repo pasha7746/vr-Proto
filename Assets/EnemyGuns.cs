@@ -18,15 +18,20 @@ public class EnemyGuns : MonoBehaviour
         public Transform barrelEnding;
         [Range(0,1)]
         public float accuracy;
+
+        public int maxAmmo;
+       
     }
 
     public SteamVR_Camera targetPlayers;
     private event Action<GunStats, int> OnAllGunsAimed;
     public List<GunStats> gunList;
     public List<Coroutine> fireRoutineList= new List<Coroutine>();
+    public int[] cAmmo;
 
-	// Use this for initialization
-	void Start ()
+
+    // Use this for initialization
+    void Start ()
 	{
 	    targetPlayers = FindObjectOfType<SteamVR_Camera>();
 	    OnAllGunsAimed += FireGuns;
@@ -40,16 +45,17 @@ public class EnemyGuns : MonoBehaviour
 	        tempGunStats.barrelEnding = gunList[i].gunModel.GetComponentInChildren<ProjectileSpawnPoint>().transform;
 	        gunList[i] = tempGunStats;
 	    }
-	    
+	    cAmmo= new int[gunList.Count];
+	    for (int i = 0; i < gunList.Count; i++)
+	    {
+	        cAmmo[i] = gunList[i].maxAmmo;
+	    }
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-	    //if (Input.GetKeyDown(KeyCode.A))
-	    //{
-     //       AimGuns(targetPlayers.transform.position);
-	    //}
+	   
     }
 
     public void OnDeathCutOfFireRoutines()
@@ -57,18 +63,33 @@ public class EnemyGuns : MonoBehaviour
        OnAllGunsAimed = null;
        StopAllCoroutines();
       
-
     }
     
     public void AimGuns(Vector3 target)
     {
+        int gunEmpty = 0;
+
         for (int i = 0; i < gunList.Count; i++)
         {
-            
-            gunList[i].gunModel.transform.DOLookAt(target, 1f).OnComplete(AimComplete(gunList[i], i));
+            if (cAmmo[i] > 0)
+            {
+                gunList[i].gunModel.transform.DOLookAt(target, 1f).OnComplete(AimComplete(gunList[i], i));
 
+            }
+            else
+            {
+                gunEmpty++;
+            }
         }
 
+        if (gunEmpty == gunList.Count)
+        {
+            Reload();
+        }
+    }
+
+    public void Reload()
+    {
         
     }
 
@@ -78,7 +99,7 @@ public class EnemyGuns : MonoBehaviour
         return null;
     }
 
-    public IEnumerator FireRoutine(GunStats cGun)
+    public IEnumerator FireRoutine(GunStats cGun, int index)
     {
 
         int ammountOfShots = (int)(Random.Range(cGun.shotsInBurst.x, cGun.shotsInBurst.y+1));
@@ -88,7 +109,7 @@ public class EnemyGuns : MonoBehaviour
            // Debug.Break();
 
             yield return new WaitForSeconds(Random.Range(cGun.fireRateRange.x, cGun.fireRateRange.y));
-            ShootProjectile(cGun);
+            ShootProjectile(cGun, index);
         }
 
         yield return null;
@@ -98,34 +119,34 @@ public class EnemyGuns : MonoBehaviour
     {
         if (fireRoutineList.Count < gunList.Count)
         {
-            fireRoutineList.Add(StartCoroutine(FireRoutine(cGun)));
+            fireRoutineList.Add(StartCoroutine(FireRoutine(cGun, coroutineIndex)));
         }
         else
         {
-           
-                fireRoutineList[coroutineIndex] = StartCoroutine(FireRoutine(cGun));
+            if (fireRoutineList[coroutineIndex] != null)
+            {
+                StopAllCoroutines();
+
+            }
+            fireRoutineList[coroutineIndex] = StartCoroutine(FireRoutine(cGun, coroutineIndex));
+            
         }
-
-
+        
     }
-
-
-    public void ShootProjectile(GunStats cGun)   //projectile gets fired out using this method
+    
+    public void ShootProjectile(GunStats cGun, int index)   //projectile gets fired out using this method
     {
         GameObject spawnedProjectile = Instantiate(cGun.projectileModel);
-
+        cAmmo[index]--;
         spawnedProjectile.transform.position = cGun.barrelEnding.position;
         spawnedProjectile.transform.LookAt(targetPlayers.transform.position);
 
         float distance = Vector3.Distance(cGun.barrelEnding.position, targetPlayers.transform.position);
         distance *= cGun.accuracy;
-      //  Vector3 pos = cGun.barrelEnding.position+ 
+
         Vector3 accuracyOffest = (spawnedProjectile.transform.forward* distance) + new Vector3(Random.Range(0f,1f), Random.Range(0f, 1f), Random.Range(0f, 1f)) ;
         accuracyOffest= Vector3.Normalize(accuracyOffest);
         spawnedProjectile.GetComponent<Rigidbody>().AddForce((spawnedProjectile.transform.forward+ accuracyOffest) * cGun.projectileSpeed);
     }
-
-   
-
-
+    
 }

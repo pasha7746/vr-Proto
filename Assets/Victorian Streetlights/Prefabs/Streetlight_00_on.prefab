@@ -10,7 +10,7 @@ GameObject:
   - component: {fileID: 417788}
   - component: {fileID: 3392102}
   - component: {fileID: 2305644}
-  - component: {fileID: 6475930}
+  - component: {fileID: 65258455261182152}
   m_Layer: 0
   m_Name: Streetlight_00_on
   m_TagString: Untagged
@@ -25,7 +25,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 151616}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 20.67, y: 0.195, z: -4.895}
+  m_LocalPosition: {x: 9.64, y: 0.195, z: -4.895}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4716960971767682}
@@ -73,20 +73,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 151616}
   m_Mesh: {fileID: 4300000, guid: 5520f838374ce4349891ed1ac80c6353, type: 3}
---- !u!64 &6475930
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151616}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 5520f838374ce4349891ed1ac80c6353, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -131,6 +117,18 @@ Transform:
   m_Father: {fileID: 417788}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65258455261182152
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151616}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.58, z: 0.23}
+  m_Center: {x: -0.21160378, y: 2.541304, z: 0.0010234492}
 --- !u!108 &108815669714718582
 Light:
   m_ObjectHideFlags: 1
@@ -146,7 +144,7 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -165,5 +163,5 @@ Light:
   m_BounceIntensity: 1.96
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_ShadowRadius: 0
+  m_ShadowRadius: 10
   m_ShadowAngle: 0

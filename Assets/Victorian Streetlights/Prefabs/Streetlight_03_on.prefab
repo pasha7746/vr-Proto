@@ -10,7 +10,7 @@ GameObject:
   - component: {fileID: 410862}
   - component: {fileID: 3332086}
   - component: {fileID: 2346442}
-  - component: {fileID: 6412460}
+  - component: {fileID: 65980413418922044}
   m_Layer: 0
   m_Name: Streetlight_03_on
   m_TagString: Untagged
@@ -25,7 +25,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100920}
   m_LocalRotation: {x: 0.000000021855694, y: 0.00000003774895, z: -8.556457e-16, w: 1}
-  m_LocalPosition: {x: 24.330048, y: 0.049294744, z: -3.620152}
+  m_LocalPosition: {x: 2.4222856, y: 0.05, z: -3.313319}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4786355100050122}
@@ -73,20 +73,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100920}
   m_Mesh: {fileID: 4300006, guid: 5520f838374ce4349891ed1ac80c6353, type: 3}
---- !u!64 &6412460
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100920}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300006, guid: 5520f838374ce4349891ed1ac80c6353, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -131,6 +117,18 @@ Transform:
   m_Father: {fileID: 410862}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65980413418922044
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100920}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 2.59, z: 0.1}
+  m_Center: {x: 0, y: 1.3, z: -0.00051121414}
 --- !u!108 &108111322651099206
 Light:
   m_ObjectHideFlags: 1
@@ -146,7 +144,7 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -165,5 +163,5 @@ Light:
   m_BounceIntensity: 1.96
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_ShadowRadius: 0
+  m_ShadowRadius: 14.05
   m_ShadowAngle: 0
