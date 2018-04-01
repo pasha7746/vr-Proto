@@ -4419,20 +4419,24 @@ MonoBehaviour:
     projectileModel: {fileID: 1666364352616400, guid: f00f1009df2708f4e885ccfc37e1dcdc,
       type: 2}
     fireRateRange: {x: 0.1, y: 1}
-    projectileSpeed: 1000
-    shotsInBurst: {x: 0, y: 10}
+    projectileSpeed: 400
+    shotsInBurst: {x: 0, y: 3}
     barrelEnding: {fileID: 0}
-    accuracy: 0.309
+    accuracy: 0.588
     maxAmmo: 10
+    projectileLifetime: 5
+    baseDamage: 5
   - gunModel: {fileID: 1121629452298882}
     projectileModel: {fileID: 1666364352616400, guid: f00f1009df2708f4e885ccfc37e1dcdc,
       type: 2}
     fireRateRange: {x: 0.1, y: 1}
-    projectileSpeed: 1000
-    shotsInBurst: {x: 0, y: 10}
+    projectileSpeed: 400
+    shotsInBurst: {x: 0, y: 3}
     barrelEnding: {fileID: 0}
-    accuracy: 0.325
+    accuracy: 0.659
     maxAmmo: 10
+    projectileLifetime: 5
+    baseDamage: 5
   cAmmo: 
 --- !u!114 &114283688997937710
 MonoBehaviour:

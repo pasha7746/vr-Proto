@@ -20,7 +20,8 @@ public class EnemyGuns : MonoBehaviour
         public float accuracy;
 
         public int maxAmmo;
-       
+        public float projectileLifetime;
+        public float baseDamage;
     }
 
     public SteamVR_Camera targetPlayers;
@@ -140,7 +141,13 @@ public class EnemyGuns : MonoBehaviour
         cAmmo[index]--;
         spawnedProjectile.transform.position = cGun.barrelEnding.position;
         spawnedProjectile.transform.LookAt(targetPlayers.transform.position);
-
+        EnemyProjectileTag projectileStats = spawnedProjectile.GetComponent<EnemyProjectileTag>();
+        if (projectileStats)
+        {
+            projectileStats.damage = cGun.baseDamage;
+            projectileStats.totalPossibleLifetime = cGun.projectileLifetime;
+        }
+        projectileStats.StartLifeTimer();
         float distance = Vector3.Distance(cGun.barrelEnding.position, targetPlayers.transform.position);
         distance *= cGun.accuracy;
 

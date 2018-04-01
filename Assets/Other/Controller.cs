@@ -7,12 +7,17 @@ public class Controller : MonoBehaviour
 {
     public bool isLeft;
 
+    //movement
+    [HideInInspector]
     public Vector3 velocity;
     private Vector3 posA;
     private Vector3 posB;
     private Vector3 rotA;
     private Vector3 rotB;
+    [HideInInspector]
     public Vector3 rotVelocity;
+
+    //side bumpers
     public float doubleTapDelay;
     private Coroutine doubleTapToDropRoutine;
     private int sideButtonState;
@@ -21,6 +26,12 @@ public class Controller : MonoBehaviour
     public event Action OnTriggerButtonLeft, OnTriggerButtonRight;
     public event Action OnSideTapLeft, OnSideTapRight;
     public event Action OnSideDoubeTapLeft, OnSideDoubleTapRight;
+
+    [HideInInspector] public Vector2 leftTrackPad, rightTrackPad;
+    public event Action<Vector2> OnPadLeft;
+    public event Action<Vector2> OnPadRight;
+
+
     private Coroutine vibrateRoutine;
     private int controllerIndex;
     private SteamVR_TrackedObject myTracker;
@@ -46,13 +57,14 @@ public class Controller : MonoBehaviour
         if (isLeft)
         {
             LeftInput();
+
         }
         else
         {
             RightInput();
         }
 
-
+       
 
     }
 
@@ -102,10 +114,20 @@ public class Controller : MonoBehaviour
 
         }
 
+        leftTrackPad.x = Input.GetAxis("TPHL"); //track pad horizontal left
+        leftTrackPad.y = Input.GetAxis("TPVL");
+
+        if (leftTrackPad != Vector2.zero)
+        {
+            if (OnPadLeft != null) OnPadLeft(leftTrackPad);
+        }
+
+
     }
 
     public void RightInput()
     {
+
         if (Input.GetButtonDown("TriggerButRight"))
         {
             if (OnTriggerButtonRight != null) OnTriggerButtonRight();
@@ -148,6 +170,13 @@ public class Controller : MonoBehaviour
             }
             isTapedIn = false;
 
+        }
+        rightTrackPad.x = Input.GetAxis("TPHR"); //track pad horizontal left
+        rightTrackPad.y = Input.GetAxis("TPVR");
+
+        if (rightTrackPad != Vector2.zero)
+        {
+            if (OnPadRight != null) OnPadRight(rightTrackPad);
         }
     }
 

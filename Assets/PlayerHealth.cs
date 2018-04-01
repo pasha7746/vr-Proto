@@ -17,7 +17,7 @@ public class PlayerHealth : MonoBehaviour
     public event Action<float> OnHealthChange;
     public event Action OnHealthZero;
 
-    
+    private PlayerTrigger myPlayerTrigger;
 
 
     void Awake()
@@ -35,11 +35,12 @@ public class PlayerHealth : MonoBehaviour
             StartRegenRoutine();
         }
 
-
+        myPlayerTrigger = GetComponentInChildren<PlayerTrigger>();
     }
 
     void Start()
     {
+        myPlayerTrigger.OnDamage += ChangeHealth;
         if (OnHealthChange != null) OnHealthChange(health);
     }
 

@@ -16,7 +16,7 @@ MonoBehaviour:
     m_Settings:
       mode: 0
       depth:
-        scale: 1
+        scale: 0.047
       motionVectors:
         sourceOpacity: 1
         motionImageOpacity: 0
@@ -33,7 +33,7 @@ MonoBehaviour:
     m_Settings:
       method: 0
       fxaaSettings:
-        preset: 2
+        preset: 4
       taaSettings:
         jitterSpread: 0.75
         sharpen: 0.3
@@ -71,17 +71,17 @@ MonoBehaviour:
   depthOfField:
     m_Enabled: 0
     m_Settings:
-      focusDistance: 0.1
+      focusDistance: 0.75
       aperture: 32
-      focalLength: 50
+      focalLength: 1
       useCameraFov: 0
       kernelSize: 0
   motionBlur:
     m_Enabled: 0
     m_Settings:
       shutterAngle: 360
-      sampleCount: 32
-      frameBlending: 0.684
+      sampleCount: 27
+      frameBlending: 1
   eyeAdaptation:
     m_Enabled: 1
     m_Settings:
@@ -107,7 +107,7 @@ MonoBehaviour:
         antiFlicker: 1
       lensDirt:
         texture: {fileID: 0}
-        intensity: 3
+        intensity: 0
   colorGrading:
     m_Enabled: 0
     m_Settings:
@@ -283,23 +283,23 @@ MonoBehaviour:
   chromaticAberration:
     m_Enabled: 0
     m_Settings:
-      spectralTexture: {fileID: 0}
-      intensity: 0.1
+      spectralTexture: {fileID: 2800000, guid: ae87eff4a526c19479d2da9a96808698, type: 3}
+      intensity: 0.057
   grain:
     m_Enabled: 0
     m_Settings:
-      colored: 1
-      intensity: 1
+      colored: 0
+      intensity: 0.51
       size: 3
-      luminanceContribution: 0
+      luminanceContribution: 1
   vignette:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       mode: 0
-      color: {r: 1, g: 0, b: 0.020689487, a: 1}
+      color: {r: 0.197, g: 0, b: 0.020689487, a: 1}
       center: {x: 0.5, y: 0.5}
-      intensity: 1
-      smoothness: 1
+      intensity: 0
+      smoothness: 0.559
       roundness: 1
       mask: {fileID: 0}
       opacity: 1

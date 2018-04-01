@@ -7,14 +7,15 @@ public class EnemyProjectileTag : MonoBehaviour
 {
     public float totalPossibleLifetime;
     private Coroutine deathRoutine;
+    [HideInInspector]
+    public float damage;
 
 
-    void Awake()
+    public void StartLifeTimer()
     {
         StartCoroutine(LifeTimer());
     }
 
-  
     public IEnumerator LifeTimer()
     {
         yield return new WaitForSeconds(totalPossibleLifetime);

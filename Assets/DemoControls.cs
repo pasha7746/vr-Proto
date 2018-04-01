@@ -24,18 +24,19 @@ public class DemoControls : MonoBehaviour
 
     public void UpdateGunSetting()
     {
-        myShooting.AddRange(FindObjectsOfType<Shooting>());
+        print("This no longer functions");
+        //myShooting.AddRange(FindObjectsOfType<Shooting>());
 
-        for (int i = 0; i < myShooting.Count; i++)
-        {
-            if (myShooting[i].isLeft)
-            {
-                myShooting[i].fireMode = shootingSettingLeft;
-            }
-            else
-            {
-                myShooting[i].fireMode = shootingSettingRight;
-            }
-        }
+        //for (int i = 0; i < myShooting.Count; i++)
+        //{
+        //    if (myShooting[i].isLeft)
+        //    {
+        //        myShooting[i].fireMode = shootingSettingLeft;
+        //    }
+        //    else
+        //    {
+        //        myShooting[i].fireMode = shootingSettingRight;
+        //    }
+        //}
     }
 }
