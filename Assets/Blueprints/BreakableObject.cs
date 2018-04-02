@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BreakableObject : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class BreakableObject : MonoBehaviour
     private Rigidbody myRigidbody;
     private Collider myCollider;
     public float despawnTimer;
+    public Vector2 blashForceRange;
+    public Vector2 blastForceRadius;
+    private List<Rigidbody> listOfShrapnelRigidbodies= new List<Rigidbody>();
 
     void Awake()
     {
@@ -34,8 +38,10 @@ public class BreakableObject : MonoBehaviour
     {
         
         if(!other.GetComponent<Projectile>()) return;
-        Destroy(wholeModel);
+        wholeModel.SetActive(false);
         brokenModel.SetActive(true);
+        listOfShrapnelRigidbodies.AddRange(brokenModel.GetComponentsInChildren<Rigidbody>());
+        listOfShrapnelRigidbodies.ForEach((a) => {a.AddExplosionForce(Random.Range(blashForceRange.x, blashForceRange.y),transform.position, Random.Range(blastForceRadius.x, blastForceRadius.y)); });
         if (myRigidbody)
         {
             myRigidbody.isKinematic = true;
@@ -43,6 +49,7 @@ public class BreakableObject : MonoBehaviour
         }
         if (OnObjectHit != null) OnObjectHit();
         myCollider.enabled = false;
+
         StartCoroutine(DespawnTimer());
     }
 

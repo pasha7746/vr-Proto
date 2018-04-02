@@ -6,10 +6,9 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private AudioSource mySource;
     public float baseDamage;
     public RaycastHit hit;
-    //public int mask;
+
     private Rigidbody myRigidbody;
     public float raycastCollideableDistance;
     [HideInInspector]
@@ -18,7 +17,6 @@ public class Projectile : MonoBehaviour
     [HideInInspector] public float angle;
     public float projectileLifetime;
     [HideInInspector] public Vector3 norm;
-    public float reboundVelocityLossScalar;
     public float penetrationProtrusinAmmount;
     [HideInInspector]
     public GameObject impactedObject;
@@ -28,20 +26,14 @@ public class Projectile : MonoBehaviour
     public float minReboundAngle;
     private LayerMask movingMask;
     private int bounceNumber;
+    public event Action<GameObject> OnDeath;
 
     void Awake()
     {
-        mySource = GetComponent<AudioSource>();
         myRigidbody = GetComponent<Rigidbody>();
     }
 
-    // Use this for initialization
-    void Start ()
-	{
-	  
-        
-
-    }
+   
 
     public void CallStart()
     {
@@ -167,7 +159,14 @@ public class Projectile : MonoBehaviour
 
     public void DespawnProjectile()
     {
-        Destroy(gameObject);
+
+        StopAllCoroutines();
+        bounceNumber = 0;
+        isImpactingMovingObject = false;
+        finalImpact = false;
+
+
+        if (OnDeath != null) OnDeath(gameObject);
     }
 
     public void OnCollisionEnter()

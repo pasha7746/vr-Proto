@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114558836668813278}
   - component: {fileID: 54324682112577646}
   - component: {fileID: 65111085242079092}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: arrowExport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,7 +242,6 @@ MonoBehaviour:
   angle: 0
   projectileLifetime: 5
   norm: {x: 0, y: 0, z: 0}
-  reboundVelocityLossScalar: 0
   penetrationProtrusinAmmount: 0.1
   impactedObject: {fileID: 0}
   numberOfRebounds: 1

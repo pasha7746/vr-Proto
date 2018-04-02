@@ -9,7 +9,7 @@ public class Shooting : MonoBehaviour
 {
     public Vector3 spawnOfset;
 
-    public GameObject projectile;
+   // public GameObject projectile;
     public Mode fireMode;
 
     public float projectileLaunchSpeed;
@@ -19,7 +19,7 @@ public class Shooting : MonoBehaviour
     private int controllerIndex;
     private Controller myController;
 
-    public bool isLeft;
+    //public bool isLeft;
     public bool vibration;
 
     public float raycastScanDistance;
@@ -43,6 +43,7 @@ public class Shooting : MonoBehaviour
     private Vector2 lastFrameCatch;
 
     public Text debugAmmoUI;
+    private Pool myPool;
 
     public enum Mode
     {
@@ -53,6 +54,7 @@ public class Shooting : MonoBehaviour
     {
         myTracker = GetComponentInParent<SteamVR_TrackedObject>();
         myController = GetComponentInParent<Controller>();
+        
 
     }
 
@@ -73,6 +75,7 @@ public class Shooting : MonoBehaviour
 	    OnUpdateAmmoUI += DebugUI;
 
         if (OnUpdateAmmoUI != null) OnUpdateAmmoUI();
+	    myPool = FindObjectOfType<Pool>();
 	}
 
     void Update()
@@ -134,7 +137,6 @@ public class Shooting : MonoBehaviour
 
     public void Reload()
     {
-        print("jvjhfhb");
         ammo = maxAmmo;
         if (OnReload != null) OnReload();
         if (OnUpdateAmmoUI != null) OnUpdateAmmoUI();
@@ -229,13 +231,21 @@ public class Shooting : MonoBehaviour
         mask = ~mask;
         Physics.Raycast(transform.position, transform.forward, out hit, raycastScanDistance,mask);
 
-        GameObject tempProjectile = Instantiate(projectile, transform.position + transform.TransformDirection(spawnOfset), transform.rotation);
+       // GameObject tempProjectile = Instantiate(projectile, transform.position + transform.TransformDirection(spawnOfset), transform.rotation);
+        GameObject tempProjectile= myPool.GiveProjectile();
+        tempProjectile.SetActive(true);
+        tempProjectile.transform.position = transform.position + transform.TransformDirection(spawnOfset);
+        tempProjectile.transform.rotation = transform.rotation;
+       
+
         Projectile tempComponent = tempProjectile.GetComponent<Projectile>();
         
         tempComponent.hit = hit;
         tempComponent.CallStart();
+        Rigidbody temRigidbody= tempProjectile.GetComponent<Rigidbody>();
+        temRigidbody.isKinematic = false;
+        temRigidbody.AddForce((transform.forward) * projectileLaunchSpeed);
 
-        tempProjectile.GetComponent<Rigidbody>().AddForce((transform.forward) * projectileLaunchSpeed);
 
     }
 
