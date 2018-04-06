@@ -1,0 +1,595 @@
+fileFormatVersion: 2
+guid: 0cd592b9e14d51848aad1dcdc81e8a60
+timeCreated: 1522989790
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: AIR_robot_high_non_combine_uv_Centre_piece14
+    100002: AIR_robot_high_non_combine_uv_exhaust_bottom_left27
+    100004: AIR_robot_high_non_combine_uv_exhaust_bottom_left27 1
+    100006: AIR_robot_high_non_combine_uv_exhaust_bottom_left30
+    100008: AIR_robot_high_non_combine_uv_exhaust_bottom_left30 1
+    100010: AIR_robot_high_non_combine_uv_gr_exhaust_pipes
+    100012: AIR_robot_high_non_combine_uv_gr_left_COGS
+    100014: AIR_robot_high_non_combine_uv_gr_left_engine
+    100016: AIR_robot_high_non_combine_uv_gr_left_mini_gun
+    100018: AIR_robot_high_non_combine_uv_gr_right_COGS
+    100020: AIR_robot_high_non_combine_uv_gr_right_engine
+    100022: AIR_robot_high_non_combine_uv_gr_right_mini_gun
+    100024: AIR_robot_high_non_combine_uv_left_connection_to_main_body
+    100026: AIR_robot_high_non_combine_uv_left_engine_body
+    100028: AIR_robot_high_non_combine_uv_left_engine_pipe
+    100030: AIR_robot_high_non_combine_uv_Left_shell82
+    100032: AIR_robot_high_non_combine_uv_Left_shell84
+    100034: AIR_robot_high_non_combine_uv_Left_shell84 1
+    100036: AIR_robot_high_non_combine_uv_Left_shell86
+    100038: AIR_robot_high_non_combine_uv_Left_shell86 1
+    100040: AIR_robot_high_non_combine_uv_right_connection_to_main_body
+    100042: AIR_robot_high_non_combine_uv_right_engine_body
+    100044: AIR_robot_high_non_combine_uv_right_engine_pipe
+    100046: AIR_robot_noncombine_EngineCAP_right
+    100048: flat_gear26
+    100050: flat_gear26 1
+    100052: Grunt_Face_Control
+    100054: //RootNode
+    100056: Grunt_head_cog
+    100058: Grunt_head_gear
+    100060: Grunt_InnerRing
+    100062: Grunt_InnerRing1
+    100064: Grunt_l_Arm_COntrl
+    100066: Grunt_l_Arm_COntrl 1
+    100068: Grunt_l_Sholder_Contrl
+    100070: Grunt_l_Sholder_Contrl1
+    100072: Grunt_lowerbackgear
+    100074: Grunt_Master
+    100076: Grunt_pivot
+    100078: grunt_shoulder_gear
+    100080: grunt_shoulder_gear 1
+    100082: Grunt_Shoulder_rot_control
+    100084: Grunt_upperbakcgear
+    100086: gruntLHipControl
+    100088: gruntLHipControl1
+    100090: GruntSuspension
+    100092: nurbsCircle2
+    100094: nurbsCircle4
+    100096: pCube54
+    100098: plain_gear48
+    100100: plain_gear49
+    100102: plain_gear50
+    100104: polySurface1044
+    100106: polySurface1045
+    100108: polySurface1046
+    100110: polySurface1061
+    100112: polySurface1061 1
+    100114: polySurface1063
+    100116: polySurface1063 1
+    100118: polySurface1064
+    100120: polySurface1064 1
+    100122: polySurface1065
+    100124: polySurface1065 1
+    100126: polySurface1069
+    100128: polySurface1069 1
+    100130: polySurface1070
+    100132: polySurface1070 1
+    100134: polySurface1071
+    100136: polySurface1071 1
+    100138: polySurface1072
+    100140: polySurface1072 1
+    100142: polySurface1073
+    100144: polySurface1073 1
+    100146: polySurface1074
+    100148: polySurface1074 1
+    100150: polySurface1075
+    100152: polySurface1075 1
+    100154: polySurface1076
+    100156: polySurface1076 1
+    100158: polySurface1077
+    100160: polySurface1077 1
+    100162: polySurface1078
+    100164: polySurface1078 1
+    100166: polySurface1079
+    100168: polySurface1079 1
+    100170: polySurface1080
+    100172: polySurface1080 1
+    100174: polySurface1081
+    100176: polySurface1081 1
+    100178: polySurface1083
+    100180: polySurface1083 1
+    100182: polySurface573
+    100184: polySurface573 1
+    100186: polySurface580
+    100188: polySurface581
+    100190: polySurface583
+    100192: polySurface583 1
+    100194: polySurface586
+    100196: polySurface590
+    100198: polySurface591
+    100200: polySurface591 1
+    100202: polySurface593
+    100204: polySurface593 1
+    100206: polySurface594
+    100208: polySurface598
+    100210: polySurface598 1
+    100212: polySurface600
+    100214: polySurface600 1
+    100216: transform1
+    100218: transform2
+    100220: transform3
+    100222: transform4
+    100224: transform5
+    100226: transform6
+    100228: transform7
+    100230: TreadControl
+    100232: TreadControl1
+    100234: Treadinnergear
+    100236: Treadinnergear1
+    100238: treads4
+    100240: TTreadGearsmall
+    100242: TTreadGearsmall 1
+    100244: TTreadgearsmallr
+    100246: TTreadgearsmallr 1
+    400000: AIR_robot_high_non_combine_uv_Centre_piece14
+    400002: AIR_robot_high_non_combine_uv_exhaust_bottom_left27
+    400004: AIR_robot_high_non_combine_uv_exhaust_bottom_left27 1
+    400006: AIR_robot_high_non_combine_uv_exhaust_bottom_left30
+    400008: AIR_robot_high_non_combine_uv_exhaust_bottom_left30 1
+    400010: AIR_robot_high_non_combine_uv_gr_exhaust_pipes
+    400012: AIR_robot_high_non_combine_uv_gr_left_COGS
+    400014: AIR_robot_high_non_combine_uv_gr_left_engine
+    400016: AIR_robot_high_non_combine_uv_gr_left_mini_gun
+    400018: AIR_robot_high_non_combine_uv_gr_right_COGS
+    400020: AIR_robot_high_non_combine_uv_gr_right_engine
+    400022: AIR_robot_high_non_combine_uv_gr_right_mini_gun
+    400024: AIR_robot_high_non_combine_uv_left_connection_to_main_body
+    400026: AIR_robot_high_non_combine_uv_left_engine_body
+    400028: AIR_robot_high_non_combine_uv_left_engine_pipe
+    400030: AIR_robot_high_non_combine_uv_Left_shell82
+    400032: AIR_robot_high_non_combine_uv_Left_shell84
+    400034: AIR_robot_high_non_combine_uv_Left_shell84 1
+    400036: AIR_robot_high_non_combine_uv_Left_shell86
+    400038: AIR_robot_high_non_combine_uv_Left_shell86 1
+    400040: AIR_robot_high_non_combine_uv_right_connection_to_main_body
+    400042: AIR_robot_high_non_combine_uv_right_engine_body
+    400044: AIR_robot_high_non_combine_uv_right_engine_pipe
+    400046: AIR_robot_noncombine_EngineCAP_right
+    400048: flat_gear26
+    400050: flat_gear26 1
+    400052: Grunt_Face_Control
+    400054: //RootNode
+    400056: Grunt_head_cog
+    400058: Grunt_head_gear
+    400060: Grunt_InnerRing
+    400062: Grunt_InnerRing1
+    400064: Grunt_l_Arm_COntrl
+    400066: Grunt_l_Arm_COntrl 1
+    400068: Grunt_l_Sholder_Contrl
+    400070: Grunt_l_Sholder_Contrl1
+    400072: Grunt_lowerbackgear
+    400074: Grunt_Master
+    400076: Grunt_pivot
+    400078: grunt_shoulder_gear
+    400080: grunt_shoulder_gear 1
+    400082: Grunt_Shoulder_rot_control
+    400084: Grunt_upperbakcgear
+    400086: gruntLHipControl
+    400088: gruntLHipControl1
+    400090: GruntSuspension
+    400092: nurbsCircle2
+    400094: nurbsCircle4
+    400096: pCube54
+    400098: plain_gear48
+    400100: plain_gear49
+    400102: plain_gear50
+    400104: polySurface1044
+    400106: polySurface1045
+    400108: polySurface1046
+    400110: polySurface1061
+    400112: polySurface1061 1
+    400114: polySurface1063
+    400116: polySurface1063 1
+    400118: polySurface1064
+    400120: polySurface1064 1
+    400122: polySurface1065
+    400124: polySurface1065 1
+    400126: polySurface1069
+    400128: polySurface1069 1
+    400130: polySurface1070
+    400132: polySurface1070 1
+    400134: polySurface1071
+    400136: polySurface1071 1
+    400138: polySurface1072
+    400140: polySurface1072 1
+    400142: polySurface1073
+    400144: polySurface1073 1
+    400146: polySurface1074
+    400148: polySurface1074 1
+    400150: polySurface1075
+    400152: polySurface1075 1
+    400154: polySurface1076
+    400156: polySurface1076 1
+    400158: polySurface1077
+    400160: polySurface1077 1
+    400162: polySurface1078
+    400164: polySurface1078 1
+    400166: polySurface1079
+    400168: polySurface1079 1
+    400170: polySurface1080
+    400172: polySurface1080 1
+    400174: polySurface1081
+    400176: polySurface1081 1
+    400178: polySurface1083
+    400180: polySurface1083 1
+    400182: polySurface573
+    400184: polySurface573 1
+    400186: polySurface580
+    400188: polySurface581
+    400190: polySurface583
+    400192: polySurface583 1
+    400194: polySurface586
+    400196: polySurface590
+    400198: polySurface591
+    400200: polySurface591 1
+    400202: polySurface593
+    400204: polySurface593 1
+    400206: polySurface594
+    400208: polySurface598
+    400210: polySurface598 1
+    400212: polySurface600
+    400214: polySurface600 1
+    400216: transform1
+    400218: transform2
+    400220: transform3
+    400222: transform4
+    400224: transform5
+    400226: transform6
+    400228: transform7
+    400230: TreadControl
+    400232: TreadControl1
+    400234: Treadinnergear
+    400236: Treadinnergear1
+    400238: treads4
+    400240: TTreadGearsmall
+    400242: TTreadGearsmall 1
+    400244: TTreadgearsmallr
+    400246: TTreadgearsmallr 1
+    2300000: AIR_robot_high_non_combine_uv_Centre_piece14
+    2300002: AIR_robot_high_non_combine_uv_exhaust_bottom_left27
+    2300004: AIR_robot_high_non_combine_uv_exhaust_bottom_left27 1
+    2300006: AIR_robot_high_non_combine_uv_exhaust_bottom_left30
+    2300008: AIR_robot_high_non_combine_uv_exhaust_bottom_left30 1
+    2300010: AIR_robot_high_non_combine_uv_Left_shell82
+    2300012: AIR_robot_high_non_combine_uv_Left_shell84
+    2300014: AIR_robot_high_non_combine_uv_Left_shell84 1
+    2300016: AIR_robot_high_non_combine_uv_Left_shell86
+    2300018: AIR_robot_high_non_combine_uv_Left_shell86 1
+    2300020: flat_gear26
+    2300022: flat_gear26 1
+    2300024: Grunt_head_cog
+    2300026: Grunt_head_gear
+    2300028: Grunt_InnerRing
+    2300030: Grunt_InnerRing1
+    2300032: Grunt_lowerbackgear
+    2300034: grunt_shoulder_gear
+    2300036: grunt_shoulder_gear 1
+    2300038: Grunt_upperbakcgear
+    2300040: pCube54
+    2300042: plain_gear48
+    2300044: plain_gear49
+    2300046: plain_gear50
+    2300048: polySurface1044
+    2300050: polySurface1045
+    2300052: polySurface1046
+    2300054: polySurface1061
+    2300056: polySurface1061 1
+    2300058: polySurface1063
+    2300060: polySurface1063 1
+    2300062: polySurface1064
+    2300064: polySurface1064 1
+    2300066: polySurface1065
+    2300068: polySurface1065 1
+    2300070: polySurface1069
+    2300072: polySurface1069 1
+    2300074: polySurface1070
+    2300076: polySurface1070 1
+    2300078: polySurface1071
+    2300080: polySurface1071 1
+    2300082: polySurface1072
+    2300084: polySurface1072 1
+    2300086: polySurface1073
+    2300088: polySurface1073 1
+    2300090: polySurface1074
+    2300092: polySurface1074 1
+    2300094: polySurface1075
+    2300096: polySurface1075 1
+    2300098: polySurface1076
+    2300100: polySurface1076 1
+    2300102: polySurface1077
+    2300104: polySurface1077 1
+    2300106: polySurface1078
+    2300108: polySurface1078 1
+    2300110: polySurface1079
+    2300112: polySurface1079 1
+    2300114: polySurface1080
+    2300116: polySurface1080 1
+    2300118: polySurface1081
+    2300120: polySurface1081 1
+    2300122: polySurface1083
+    2300124: polySurface1083 1
+    2300126: polySurface573
+    2300128: polySurface573 1
+    2300130: polySurface581
+    2300132: polySurface583
+    2300134: polySurface583 1
+    2300136: polySurface586
+    2300138: polySurface590
+    2300140: polySurface591
+    2300142: polySurface591 1
+    2300144: polySurface593
+    2300146: polySurface593 1
+    2300148: polySurface594
+    2300150: polySurface598
+    2300152: polySurface598 1
+    2300154: polySurface600
+    2300156: polySurface600 1
+    2300158: Treadinnergear
+    2300160: Treadinnergear1
+    2300162: TTreadGearsmall
+    2300164: TTreadGearsmall 1
+    2300166: TTreadgearsmallr
+    2300168: TTreadgearsmallr 1
+    3300000: AIR_robot_high_non_combine_uv_Centre_piece14
+    3300002: AIR_robot_high_non_combine_uv_exhaust_bottom_left27
+    3300004: AIR_robot_high_non_combine_uv_exhaust_bottom_left27 1
+    3300006: AIR_robot_high_non_combine_uv_exhaust_bottom_left30
+    3300008: AIR_robot_high_non_combine_uv_exhaust_bottom_left30 1
+    3300010: AIR_robot_high_non_combine_uv_Left_shell82
+    3300012: AIR_robot_high_non_combine_uv_Left_shell84
+    3300014: AIR_robot_high_non_combine_uv_Left_shell84 1
+    3300016: AIR_robot_high_non_combine_uv_Left_shell86
+    3300018: AIR_robot_high_non_combine_uv_Left_shell86 1
+    3300020: flat_gear26
+    3300022: flat_gear26 1
+    3300024: Grunt_head_cog
+    3300026: Grunt_head_gear
+    3300028: Grunt_InnerRing
+    3300030: Grunt_InnerRing1
+    3300032: Grunt_lowerbackgear
+    3300034: grunt_shoulder_gear
+    3300036: grunt_shoulder_gear 1
+    3300038: Grunt_upperbakcgear
+    3300040: pCube54
+    3300042: plain_gear48
+    3300044: plain_gear49
+    3300046: plain_gear50
+    3300048: polySurface1044
+    3300050: polySurface1045
+    3300052: polySurface1046
+    3300054: polySurface1061
+    3300056: polySurface1061 1
+    3300058: polySurface1063
+    3300060: polySurface1063 1
+    3300062: polySurface1064
+    3300064: polySurface1064 1
+    3300066: polySurface1065
+    3300068: polySurface1065 1
+    3300070: polySurface1069
+    3300072: polySurface1069 1
+    3300074: polySurface1070
+    3300076: polySurface1070 1
+    3300078: polySurface1071
+    3300080: polySurface1071 1
+    3300082: polySurface1072
+    3300084: polySurface1072 1
+    3300086: polySurface1073
+    3300088: polySurface1073 1
+    3300090: polySurface1074
+    3300092: polySurface1074 1
+    3300094: polySurface1075
+    3300096: polySurface1075 1
+    3300098: polySurface1076
+    3300100: polySurface1076 1
+    3300102: polySurface1077
+    3300104: polySurface1077 1
+    3300106: polySurface1078
+    3300108: polySurface1078 1
+    3300110: polySurface1079
+    3300112: polySurface1079 1
+    3300114: polySurface1080
+    3300116: polySurface1080 1
+    3300118: polySurface1081
+    3300120: polySurface1081 1
+    3300122: polySurface1083
+    3300124: polySurface1083 1
+    3300126: polySurface573
+    3300128: polySurface573 1
+    3300130: polySurface581
+    3300132: polySurface583
+    3300134: polySurface583 1
+    3300136: polySurface586
+    3300138: polySurface590
+    3300140: polySurface591
+    3300142: polySurface591 1
+    3300144: polySurface593
+    3300146: polySurface593 1
+    3300148: polySurface594
+    3300150: polySurface598
+    3300152: polySurface598 1
+    3300154: polySurface600
+    3300156: polySurface600 1
+    3300158: Treadinnergear
+    3300160: Treadinnergear1
+    3300162: TTreadGearsmall
+    3300164: TTreadGearsmall 1
+    3300166: TTreadgearsmallr
+    3300168: TTreadgearsmallr 1
+    4300000: pCube54
+    4300002: AIR_robot_high_non_combine_uv_Centre_piece14
+    4300004: polySurface581
+    4300006: Grunt_head_cog
+    4300008: polySurface586
+    4300010: Grunt_head_gear
+    4300012: AIR_robot_high_non_combine_uv_Left_shell82
+    4300014: polySurface1046
+    4300016: polySurface1045
+    4300018: polySurface1044
+    4300020: plain_gear49
+    4300022: plain_gear50
+    4300024: plain_gear48
+    4300026: polySurface598
+    4300028: AIR_robot_high_non_combine_uv_exhaust_bottom_left30
+    4300030: polySurface600
+    4300032: grunt_shoulder_gear
+    4300034: polySurface591
+    4300036: flat_gear26
+    4300038: polySurface583
+    4300040: AIR_robot_high_non_combine_uv_Left_shell84
+    4300042: AIR_robot_high_non_combine_uv_Left_shell86
+    4300044: AIR_robot_high_non_combine_uv_exhaust_bottom_left27
+    4300046: polySurface598
+    4300048: AIR_robot_high_non_combine_uv_exhaust_bottom_left30
+    4300050: polySurface600
+    4300052: grunt_shoulder_gear
+    4300054: polySurface591
+    4300056: flat_gear26
+    4300058: polySurface583
+    4300060: AIR_robot_high_non_combine_uv_Left_shell84
+    4300062: AIR_robot_high_non_combine_uv_Left_shell86
+    4300064: AIR_robot_high_non_combine_uv_exhaust_bottom_left27
+    4300066: polySurface590
+    4300068: Grunt_upperbakcgear
+    4300070: polySurface594
+    4300072: Grunt_lowerbackgear
+    4300074: polySurface1065
+    4300076: polySurface1076
+    4300078: polySurface1075
+    4300080: polySurface1074
+    4300082: polySurface1073
+    4300084: polySurface1072
+    4300086: polySurface1071
+    4300088: polySurface1070
+    4300090: polySurface1083
+    4300092: polySurface1069
+    4300094: polySurface1081
+    4300096: polySurface1080
+    4300098: polySurface1079
+    4300100: polySurface1078
+    4300102: polySurface1077
+    4300104: polySurface573
+    4300106: Grunt_InnerRing
+    4300108: polySurface593
+    4300110: Treadinnergear
+    4300112: TTreadgearsmallr
+    4300114: polySurface1061
+    4300116: polySurface1063
+    4300118: TTreadGearsmall
+    4300120: polySurface1064
+    4300122: polySurface1065
+    4300124: polySurface1076
+    4300126: polySurface1075
+    4300128: polySurface1074
+    4300130: polySurface1073
+    4300132: polySurface1072
+    4300134: polySurface1071
+    4300136: polySurface1070
+    4300138: polySurface1083
+    4300140: polySurface1069
+    4300142: polySurface1081
+    4300144: polySurface1080
+    4300146: polySurface1079
+    4300148: polySurface1078
+    4300150: polySurface1077
+    4300152: polySurface573
+    4300154: polySurface593
+    4300156: TTreadgearsmallr
+    4300158: polySurface1061
+    4300160: polySurface1063
+    4300162: TTreadGearsmall
+    4300164: polySurface1064
+    4300166: Grunt_InnerRing1
+    4300168: Treadinnergear1
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 86ef709162bc1c1448a1dba1c5abaf38, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
